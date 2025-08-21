@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './cadastrar.css'
 })
 export class Cadastrar {
+  nome =  'pedro';
+  caminhodeimagem = 'https';
 
+  dizerOI() {
+    this.nome = 'Ola quarto termo A';
+  }
 }
