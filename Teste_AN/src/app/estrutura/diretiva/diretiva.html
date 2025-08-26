@@ -1,0 +1,21 @@
+<title> Diretiva</title>
+
+<div>
+<button (click)="btnVO">
+    V/O
+</button>
+
+<button (click)="soma">
+    +
+</button>
+
+<button (click)="diminuir">
+    -
+</button>
+</div>
+
+<ul>
+  <li *ngFor="let aluno of listaAlunos">
+    {{ aluno.id }} - {{ aluno.nome }} - {{ aluno.status }}
+  </li>
+</ul>

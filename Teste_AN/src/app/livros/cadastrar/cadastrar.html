@@ -1,8 +1,21 @@
-<p>cadastro de livros</p>
-
-{{nome}}
+<p>Cadastro de livros</p>
 
 
-<img src="{{caminhodeimagem}}" width="300 " height="900"/>
+<p *ngIf="mostrarMensagem">Esta, mensagem e exibida condicionamente</p> 
+<button (click)="togleMensagem()">Alternar Mensagem</button>
 
-<button (click)="dizerOI()">Dizer OI</button>
+<ul>
+  <li *ngFor="let item of listaItens">
+    {{ item }}
+  </li>
+</ul>
+
+<div [ngClass]="{'Destaque': isDestaque, 'erro': haserror}">
+  Este div muda de cor com base na variável mostrarMensagem
+</div>
+
+<button (click)="togleDestaque()">Alternar Destaque</button>
+
+<div [ngStyle]="{'background-color': cordeFundo, `font_size`: tamanhoFonte}">
+  Este div muda de cor com base na variável cordeFundo e tamanhoFonte
+</div>

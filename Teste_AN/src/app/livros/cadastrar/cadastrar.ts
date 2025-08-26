@@ -7,10 +7,22 @@ import { Component } from '@angular/core';
   styleUrl: './cadastrar.css'
 })
 export class Cadastrar {
-  nome =  'pedro';
-  caminhodeimagem = 'https';
+  mostrarMensagem = false;
 
-  dizerOI() {
-    this.nome = 'Ola quarto termo A';
+  togleMensagem() {
+    this.mostrarMensagem = !this.mostrarMensagem;
   }
+
+  listaItens = ['Maçã', 'Banana', 'Pera'];
+
+    isDestaque = true;
+    haserror = false;
+
+    togleDestaque(){
+        this.isDestaque = !this.isDestaque;
+        this.haserror = !this.haserror;
+    }
+
+    cordeFundo = 'yellow';
+    tamanhoFonte = '20px';
 }
