@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 interface Aluno {
   id: number;
   nome: string;
-  status: string;
+  ativo: boolean;
 }
 
 @Component({
@@ -13,7 +13,12 @@ interface Aluno {
   styleUrl: './diretiva.css'
 })
 export class Diretiva {
-
+  listaAlunos: Aluno[] = [
+    { id: 1, nome: 'Ana', ativo: true },
+    { id: 2, nome: 'Bia', ativo: false },
+    { id: 3, nome: 'Carlos', ativo: true },
+    { id: 4, nome: 'Daniel', ativo: false }
+  ];
   mostrarLista: boolean = true;
   tamanhoFonte: number = 16;
 

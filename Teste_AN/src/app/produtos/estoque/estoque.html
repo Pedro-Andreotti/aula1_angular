@@ -1,1 +1,40 @@
-<p>estoque works!</p>
+<div class="catalogo-container">
+  <h2>Catálogo de Produtos com Estoque</h2>
+  <div class="acoes">
+    <button class="btn btn-success" (click)="aumentarPrecos()">
+      Aumentar preços em 10%
+    </button>
+    <button class="btn btn-warning" (click)="diminuirPrecos()">
+      Diminuir preços em 10%
+    </button>
+  </div>
+  <table class="produtos-table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Estoque</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produto of produtos">
+        <td>{{ produto.nome }}</td>
+        <td [ngStyle]="{'color': getCorPreco(produto.preco)}">
+          R$ {{ produto.preco }}
+        </td>
+        
+        <td>{{ produto.estoque }}</td>
+        <td>
+          <span *ngIf="isDisponivel(produto)" 
+                [ngClass]="{'disponivel': true}">
+            Disponível
+          </span>
+          <span *ngIf="!isDisponivel(produto)" 
+                [ngClass]="{'indisponivel': true}">
+            Indisponível
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
