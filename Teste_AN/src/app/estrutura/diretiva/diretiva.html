@@ -1,21 +1,20 @@
-<title> Diretiva</title>
+<title>Diretiva</title>
 
 <div>
-<button (click)="btnVO">
-    V/O
-</button>
-
-<button (click)="soma">
-    +
-</button>
-
-<button (click)="diminuir">
-    -
-</button>
+  <button (click)="alternarLista()">
+    Exibir/Ocultar Lista
+  </button>
 </div>
 
-<ul>
-  <li *ngFor="let aluno of listaAlunos">
-    {{ aluno.id }} - {{ aluno.nome }} - {{ aluno.status }}
+<ul *ngIf="mostrarLista">
+  <li *ngFor="let aluno of listaAlunos"
+      [ngClass]="aluno.ativo ? 'ativo' : 'inativo'"
+      [ngStyle]="{'font-size.px': tamanhoFonte}">
+    {{ aluno.id }} - {{ aluno.nome }} - {{ aluno.ativo ? 'Ativo' : 'Inativo' }}
   </li>
 </ul>
+
+<div>
+  <button (click)="aumentarFonte()">+</button>
+  <button (click)="diminuirFonte()">-</button>
+</div>

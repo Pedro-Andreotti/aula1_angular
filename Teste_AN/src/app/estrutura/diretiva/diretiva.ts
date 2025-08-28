@@ -14,14 +14,18 @@ interface Aluno {
 })
 export class Diretiva {
 
-    listaAlunos:  Aluno[] = [
-      { id: 1, nome: 'Ana', status: 'Ativo' },
-      { id: 2, nome: 'Bia', status: 'Inativo' },
-      { id: 3, nome: 'Carlos', status: 'Ativo ' },
-      { id: 4, nome: 'Daniel', status: 'Inativo' },  
-      ];
+  mostrarLista: boolean = true;
+  tamanhoFonte: number = 16;
 
-      btnVO (){
-        this.btnVO.push({ });
-      }
-}
+  alternarLista() {
+    this.mostrarLista = !this.mostrarLista;
+  }
+
+  aumentarFonte() {
+    this.tamanhoFonte += 2;
+  }
+
+  diminuirFonte() {
+    if (this.tamanhoFonte > 10) this.tamanhoFonte -= 2;
+  }
+ }
