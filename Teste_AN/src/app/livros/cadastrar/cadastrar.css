@@ -5,3 +5,11 @@
 .error{
     background-color: red;
 }
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-card-footer {
+  padding: 16px;
+}

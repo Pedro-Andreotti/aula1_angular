@@ -1,7 +1,28 @@
 <p>Cadastro de livros</p>
 
+<mat-toolbar>
+  <span>My App</span>
+</mat-toolbar>
 
-<p *ngIf="mostrarMensagem">Esta, mensagem e exibida condicionamente</p> 
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Chihuahua</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{longText}}</p>
+  </mat-card-content>
+  <mat-card-footer class="example-card-footer">
+    <mat-chip-set aria-label="Chihuahua traits">
+      <mat-chip>charming</mat-chip>
+      <mat-chip>graceful</mat-chip>
+      <mat-chip>sassy</mat-chip>
+    </mat-chip-set>
+  </mat-card-footer>
+</mat-card>
+
+
+
+<p *ngIf="mostrarMensagem">Esta, mensagem e exibida condicionamente</p>
 <button (click)="togleMensagem()">Alternar Mensagem</button>
 
 <ul>
@@ -19,4 +40,3 @@
 <div [ngStyle]="{'background-color': cordeFundo, `font_size`: tamanhoFonte}">
   Este div muda de cor com base na variável cordeFundo e tamanhoFonte
 </div>
-<app-listar-component></app-listar-component>
