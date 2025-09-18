@@ -40,3 +40,31 @@
 <div [ngStyle]="{'background-color': cordeFundo, `font_size`: tamanhoFonte}">
   Este div muda de cor com base na variável cordeFundo e tamanhoFonte
 </div>
+
+<div style="text-align: center; margin-top: 50px;">
+  <h3 *ngIf="logado">Bem-vindo ao sistema!</h3>
+  <h3 *ngIf="!logado">Você precisa se autenticar.</h3>
+ <button (click)="alternarLogin()">
+  <span *ngIf="logado">Sair</span>
+  <span *ngIf="!logado">Entrar</span>
+</button>
+
+</div>
+
+<div class="container">
+  <h2>Lista de Tarefas 📝</h2>
+
+  <input
+    type="text"
+    [(ngModel)]="novaTarefa"
+    placeholder="Digite uma nova tarefa"
+  />
+  <button (click)="adicionarTarefa()">+</button>
+
+  <ul>
+    <li *ngFor="let tarefa of tarefas; let i = index">
+      {{ tarefa }}
+      <button (click)="removerTarefa(i)">-</button>
+    </li>
+  </ul>
+</div>
