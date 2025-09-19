@@ -68,3 +68,16 @@
     </li>
   </ul>
 </div>
+
+<div>
+  <label>Nome:</label>
+  <input type="text" [(ngModel)]="aluno.nome" placeholder="Digite o nome" />
+
+  <label>Nota:</label>
+  <input type="number" [(ngModel)]="aluno.nota" placeholder="Digite a nota" />
+</div>
+
+<div *ngIf="aluno.nome && aluno.nota !== null"
+     [ngStyle]="{ color: aluno.nota >= 7 ? 'green' : 'red' }">
+  {{ aluno.nome }} - Nota: {{ aluno.nota }}
+</div>

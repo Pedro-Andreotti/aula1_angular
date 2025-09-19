@@ -51,6 +51,11 @@ export class Cadastrar {
   removerTarefa(index: number) {
     this.tarefas.splice(index, 1);
   }
+  aluno = {
+    nome: '' as string,
+    nota: null as number | null,
+  };
+
 }
 
 
